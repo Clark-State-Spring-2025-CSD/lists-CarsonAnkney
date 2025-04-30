@@ -18,3 +18,59 @@
 #Player two's highest number is 8 at index 1
 #Player one's lowest number is 1 at index 4
 #Player two's lowest number is 1 at index 5
+
+import random
+
+
+theList1 = []
+
+theList2 = []
+    
+for i in range(10):
+    theList1.append(random.randint(1, 50))
+
+for i in range(10):
+    theList2.append(random.randint(1, 50))
+    
+player_one_wins = 0
+player_two_wins = 0
+
+for num1, num2 in zip(theList1, theList2):
+    if num1 > num2:
+        player_one_wins += 1
+    elif num2 > num1:
+        player_two_wins += 1
+
+
+
+print(f"player one = {theList1}")
+
+print(f"player two = {theList2}")
+
+print(f"player one won {player_one_wins} times")
+
+print(f"player two won {player_two_wins} times")
+
+biggest_number = max(theList1)
+
+biggest_number2 = max(theList2)
+
+index_of_biggest_number = theList1.index(biggest_number)
+
+index_of_biggest_number2 = theList2.index(biggest_number2)
+
+print(f"player one's highest number is {biggest_number} at index {index_of_biggest_number}")
+
+print(f"player two's highest number is {biggest_number2} at index {index_of_biggest_number2}")
+
+lowest_number = min(theList1)
+
+index_of_lowest_number = theList1.index(lowest_number)
+
+lowest_number2 = min(theList2)
+
+index_of_lowest_number2 = theList2.index(lowest_number2)
+
+print(f"player one's lowest number is {lowest_number} at index {index_of_lowest_number}")
+
+print(f"player two's lowest number is {lowest_number2} at index {index_of_lowest_number2}")
